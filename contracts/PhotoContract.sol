@@ -67,6 +67,7 @@ contract PhotoContract is Owned {
 
 	// fetch and returns all photo IDs on site
 	// This is a dumb function. Does return photos array that already exists
+	// Can possibly use this later to get photos uploaded by specific userss
 	function getPhotosListed() public constant returns (uint[]) {
 	  // we check whether there is at least one article
 	  if(photoCounter == 0) {

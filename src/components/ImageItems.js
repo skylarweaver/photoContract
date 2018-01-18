@@ -47,7 +47,7 @@ class ImageItems extends Component {
   render() {
 
     var photoIds = this.props.photoIds //[1,2,3,4,5,6,7,8]
-    var links = ['http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200']
+    var links = this.props.links
     const imageItems = photoIds.map((number) =>
       <div key={number} className="pure-u-1-8 pure-u-md-1-8">
         <img src={links[number-1]} className="pure-img"/>
