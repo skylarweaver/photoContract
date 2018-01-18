@@ -1,11 +1,19 @@
+// Front-end Libraries
 import React, { Component } from 'react'
+
+// blockchain imports
 import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
 import getWeb3 from './utils/getWeb3'
 
+// Import CSS
 import './css/oswald.css'
 import './css/open-sans.css'
 import './css/pure-min.css'
 import './App.css'
+
+// Import Components
+import ImageItems from './components/ImageItems';
+
 
 class App extends Component {
   constructor(props) {
@@ -68,6 +76,15 @@ class App extends Component {
   }
 
   render() {
+
+    var numbers = [1,2,3,4,5,6,7,8]
+    var links = ['http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200']
+    // const imageItems = numbers.map((number) =>
+    //   <div key={number} className="pure-u-1-8 pure-u-md-1-8">
+    //     <img src={links[number-1]} className="pure-img"/>
+    //   </div>
+    // );
+
     return (
       <div className="App">
         <nav className="navbar pure-menu pure-menu-horizontal">
@@ -95,8 +112,7 @@ class App extends Component {
               <h4>Personal</h4>
             </div>
 
-            <img className="pure-img" src="http://via.placeholder.com/200x200"/>
-
+            <ImageItems photoIds={numbers}/>
           </div>
         </main>
       </div>
