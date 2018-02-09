@@ -3,7 +3,7 @@ pragma solidity ^0.4.2;
 import "./Owned.sol";
 
 /**
- * The PhotoContract contract does allows uploading of photo metadata to the blockchain
+ * The PhotoContract contract allows uploading of photo metadata to the blockchain
  */
 contract PhotoContract is Owned {
 

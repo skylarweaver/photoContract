@@ -72,6 +72,8 @@ class App extends Component {
     // Declaring this for later so we can chain functions on PhotoContract.
     var PhotoContractInstance
 
+    // 
+
     // Get accounts.
     this.state.web3.eth.getAccounts((error, accounts) => {
       PhotoCon.deployed().then((instance) => {
@@ -84,7 +86,12 @@ class App extends Component {
         return PhotoContractInstance.getNumberOfPhotos({from: accounts[0]})
       }).then((numPhotosResult) => {
         // Update state with the result.
-        return this.setState({ totalPhotos: numPhotosResult.c[0] })
+        this.setState({ totalPhotos: numPhotosResult.c[0] })
+        return this.state.web3.eth.getBalance(accounts[0], (err, balance) => {
+          if (err === null) {
+            this.setState({ ethBalance: this.state.web3.fromWei(balance, "ether").toNumber() });
+          }
+        })
       })
     })
   }
@@ -130,7 +137,7 @@ class App extends Component {
     var links = ['http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200', 'http://via.placeholder.com/200x200']
     var name = "Skylar Weaver"
     var pubKey = this.state.pubKey
-    var holdings = 500
+    var holdings = this.state.ethBalance
 
     // Possibly make web3 calls all at beginning and cache photo data here. Then pass through to component as props for displaying.
 
