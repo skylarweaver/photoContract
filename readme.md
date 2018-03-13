@@ -23,6 +23,11 @@ These instructions will get you a copy of the project up and running on your loc
     truffle develop
     ```
 
+3.1 Optionally log chain details in new terminal tab using:
+    ```javascript
+    truffle develop --log
+    ```
+
 4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
     ```javascript
     compile
@@ -54,3 +59,10 @@ These instructions will get you a copy of the project up and running on your loc
     ```javascript
     npm run build
     ```
+
+## Console Commands
+
+`PhotoContract.deployed().then(function(instance) {app = instance; })`
+
+`var photoEvent = app.addedPhotoEvent({}, {fromBlock: 0,toBlock: 'latest'}).watch(function(error, event) {console.log(event);})`
+

@@ -40,33 +40,37 @@ class AddPhotoForm extends Component {
 
   render() {
     return (
-      <form className="pure-u-1-2" onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input className="pure-u-1-1" type="text" name="nameValue" value={this.state.nameValue} onChange={this.handleChange} />
-        </label>
-        <label>
-          Photo URL:
-          <input className="pure-u-1-1" type="text" name="urlValue" value={this.state.urlValue} onChange={this.handleChange} />
-        </label>
-        <label>
-          Description:
-          <input className="pure-u-1-1" type="text" name="descriptionValue" value={this.state.descriptionValue} onChange={this.handleChange} />
-        </label>
-        <label>
-          Date:
-          <input className="pure-u-1-1" type="text" name="dateValue" value={this.state.dateValue} onChange={this.handleChange} />
-        </label>
-        <label>
-          Location:
-          <input className="pure-u-1-1" type="text" name="locationValue" value={this.state.locationValue} onChange={this.handleChange} />
-        </label>
-        <label>
-          Price:
-          <input className="pure-u-1-1" type="number" name="priceValue" value={this.state.priceValue} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Upload" />
-      </form>
+      <div className="pure-u-1-1">
+      <h1>Upload</h1>
+        <h3>Upload a photo to the Blockchain</h3>
+        <form className="pure-u-1-1" onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input className="pure-u-1-1" type="text" name="nameValue" value={this.state.nameValue} onChange={this.handleChange} />
+          </label>
+          <label>
+            Photo URL:
+            <input className="pure-u-1-1" type="text" name="urlValue" value={this.state.urlValue} onChange={this.handleChange} />
+          </label>
+          <label>
+            Description:
+            <input className="pure-u-1-1" type="text" name="descriptionValue" value={this.state.descriptionValue} onChange={this.handleChange} />
+          </label>
+          <label>
+            Date:
+            <input className="pure-u-1-1" type="text" name="dateValue" value={this.state.dateValue} onChange={this.handleChange} />
+          </label>
+          <label>
+            Location:
+            <input className="pure-u-1-1" type="text" name="locationValue" value={this.state.locationValue} onChange={this.handleChange} />
+          </label>
+          <label>
+            Price:
+            <input className="pure-u-1-1" type="number" name="priceValue" value={this.state.priceValue} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Upload" />
+        </form>
+      </div>
     );
   }
 }

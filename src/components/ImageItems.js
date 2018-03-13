@@ -5,21 +5,47 @@ class ImageItems extends Component {
     super(props)
 
     this.state = {
+      photoIds: this.props.photoIds,
     }
   }
 
   componentWillMount() {
+    // this.filterPhotosToDisplay();
+  }
+
+  // function Greeting(props) {
+  //   const isLoggedIn = props.isLoggedIn;
+  //   if (isLoggedIn) {
+  //     return <UserGreeting />;
+  //   }
+  //   return <GuestGreeting />;
+  // }
+
+  filterPhotosToDisplay() {
+
+
+    // else display all photos taken by community
   }
 
   render() {
 
-    var photoIds = this.props.photoIds //[1,2,3,4,5,6,7,8]
     var links = this.props.links
-    const imageItems = photoIds.map((number) =>
-      <div key={number} className="pure-u-1-8 pure-u-md-1-8">
-        <img src={links[number-1]} alt="sample" className="pure-img"/>
+    var photosToDisplay = [];
+    // Filter photos based on Community or Personal depending on tab selected
+    if (this.props.showPersonal === true) {
+      photosToDisplay = this.props.photos.filter(photo => photo["owner"] === this.props.pubKey)
+    }
+    else{
+      console.log("Show Personal: " + this.props.showPersonal);
+      photosToDisplay = this.props.photos;
+    }
+
+    const imageItems = photosToDisplay.map((photo) =>
+      <div key={photo["id"]} className="pure-u-1-8 pure-u-md-1-8">
+        <img src={links[1]} alt="sample" className="pure-img"/>
       </div>
     );
+
 
     return (
       <div>
